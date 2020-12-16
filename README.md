@@ -1,6 +1,6 @@
 ## Dependências
 
-Sistema foi desenvolvido utilizando Lavavel 8, PHP 7.4 e MySql 8.
+Sistema foi desenvolvido utilizando Laravel 8, PHP 7.4 e MySql 8.
 
 ## Configuração
 
