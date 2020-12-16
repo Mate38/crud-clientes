@@ -51,3 +51,8 @@ Em seguida execute o comando para criação das tabelas:
 Caso queira começar o projeto com registros pré criados, rode:
 
 ```php artisan migrate --seed```
+
+
+Caso queira acessar rapidamento pode utilizar o comando
+
+```php artisan serve```

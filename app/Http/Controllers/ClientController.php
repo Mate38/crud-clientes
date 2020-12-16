@@ -31,11 +31,13 @@ class ClientController extends Controller
 
             if($request->image) {
 
+                $photo = Storage::disk('public')->put('client_photo', $request->image);
+
                 if ($client->photo) {
                     Storage::disk('public')->delete($client->photo);
                 }
 
-                $client->photo = Storage::disk('public')->put('client_photo', $request->image);
+                $client->photo = $photo;
             }
 
             $client->save();
