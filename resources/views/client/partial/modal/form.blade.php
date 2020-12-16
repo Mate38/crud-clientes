@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="name">Nome *</label>
+                                <label for="name" class="required">Nome</label>
                                 <input type="text" class="form-control" name="name" value="{{ isset($client) && $client->name ? $client->name : null }}" required>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="email">E-mail *</label>
+                                <label for="email" class="required">E-mail</label>
                                 <input type="email" class="form-control" name="email" value="{{ isset($client) && $client->email ? $client->email : null }}" required>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="tel">Telefone *</label>
-                                <input type="text" class="form-control" name="tel" value="{{ isset($client) && $client->tel ? $client->tel : null }}" required>
+                                <label for="tel" class="required">Telefone</label>
+                                <input type="text" class="form-control phone_with_ddd" name="tel" value="{{ isset($client) && $client->tel ? $client->tel : null }}" required>
                             </div>
                         </div>
                     </div>

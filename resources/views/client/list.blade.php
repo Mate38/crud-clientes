@@ -54,6 +54,10 @@
     .div_client_photo_preview {
         text-align: center;
     }
+    .required:after {
+        content:" *";
+        color: red;
+    }
 </style>
 @endsection
 
