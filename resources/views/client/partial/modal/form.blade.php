@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="image">Foto</label>
-                                <input type="file" accept="image/*" id="{{'client_photo_input_'.(isset($client) ? $client->id : '')}}" class="form-control" name="image" value="{{ isset($client) && $client->photo ?? null }}">
+                                <input type="file" accept="image/*" id="{{'client_photo_input_'.(isset($client) ? $client->id : '')}}" class="form-control" name="image" value="{{ isset($client) && $client->photo ?? null }}" onchange="readURL(this, {{isset($client) ? $client->id : null}});" >
                             </div>
                         </div>
                     </div>
@@ -63,25 +63,3 @@
         </div>
     </div>
 </div>
-
-@section('scripts')
-<script>
-    var clientId = {{ isset($client) ? $client->id : null }};
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#client_photo_img_'+clientId).attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $('#client_photo_input_'+clientId).change(function(){
-        readURL(this);
-    });
-</script>
-@endsection

@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">
         <button type="button" title="Cadastrar novo cliente" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#formModal">
-            <b>+ Adicionar</b>
+            <i class="fas fa-user-plus"></i> <b>Novo</b>
         </button>
     </div>
     <div class="card-body">
@@ -55,4 +55,20 @@
         text-align: center;
     }
 </style>
+@endsection
+
+@section('scripts')
+<script>
+    function readURL(input, clientId) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#client_photo_img_'+clientId).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 @endsection
