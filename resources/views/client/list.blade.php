@@ -26,7 +26,7 @@
                         <img src="{{ $client->photo ? url('storage/'.$client->photo) : URL::asset('assets/images/default-user-image.png') }}" alt="profile Pic" class="client_photo" height="45" width="45"> {{ $client->name }}
                     </th>
                     <td class="align-middle">{{ $client->email }}</td>
-                    <td class="align-middle">{{ brazil_phone_number_format($client->tel) }}</td>
+                    <td class="align-middle">{{ $client->tel }}</td>
                     <td class="align-middle">
                         <button type="button" title="Editar cadastro" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="{{'#formModal'.$client->id}}">
                             <i class="fas fa-user-edit"></i>

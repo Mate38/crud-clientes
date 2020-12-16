@@ -19,4 +19,14 @@ class Client extends Model
 		'photo'
 	];
 
+	public function getTelAttribute()
+	{
+		return brazil_phone_number_format($this->attributes['tel']);
+	}
+
+	public function setTelAttribute($value)
+    {
+        $this->attributes['tel'] = preg_replace("/[^0-9]/", "", $value);
+    }
+
 }

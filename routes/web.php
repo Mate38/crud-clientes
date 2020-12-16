@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('client.list');
 });
 
 Route::get('/client/list', 'ClientController@list')->name('client.list');
