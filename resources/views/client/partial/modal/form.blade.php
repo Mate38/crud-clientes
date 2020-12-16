@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" id="{{'formClient'.($client->id ?? '')}}" action="{{ isset($client) ? route('client.update', [$client->id]) : route('client.save') }}" enctype="multipart/form-data">
+                <form method="POST" id="{{'formClient'.($client->id ?? '')}}" action="{{ isset($client) ? route('client.update', $client) : route('client.save') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">

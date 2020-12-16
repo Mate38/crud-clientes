@@ -3,8 +3,8 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#formModal">
-            + Adicionar
+        <button type="button" title="Cadastrar novo cliente" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#formModal">
+            <b>+ Adicionar</b>
         </button>
     </div>
     <div class="card-body">
@@ -28,9 +28,12 @@
                     <td class="align-middle">{{ $client->email }}</td>
                     <td class="align-middle">{{ brazil_phone_number_format($client->tel) }}</td>
                     <td class="align-middle">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="{{'#formModal'.$client->id}}">
+                        <button type="button" title="Editar cadastro" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="{{'#formModal'.$client->id}}">
                             <i class="fas fa-user-edit"></i>
                         </button>
+                        <a href="{{ route('client.delete', $client) }}" title="Excluir cadastro" onclick="return confirm('Tem certeza que deseja excluir o cadastro de {{$client->name}}? Esta ação não poderá ser desfeita!')" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
                 @include('client.partial.modal.form', ['client' => $client])

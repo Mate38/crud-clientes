@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/client/list', 'ClientController@list')->name('client.list');
 Route::post('/client/save', 'ClientController@save')->name('client.save');
 Route::post('/client/update/{client}', 'ClientController@save')->name('client.update');
+Route::get('/client/delete/{client}', 'ClientController@delete')->name('client.delete');

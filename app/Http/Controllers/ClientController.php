@@ -27,7 +27,6 @@ class ClientController extends Controller
             }
 
             $requestData = $request->all();
-            
             $client->fill($requestData);
 
             if($request->image) {
@@ -42,7 +41,19 @@ class ClientController extends Controller
             $client->save();
     
             Session::flash('success', 'Cadastro realizado com sucesso!');
+        } catch(\Exception $e) {
+            Session::flash('error', '<b>Erro!</b><br>'.$e->getMessage());
+        }
+         
+        return redirect()->route('client.list');
+    }
 
+    public function delete(Client $client) 
+    {
+        try {
+            $client->delete();
+    
+            Session::flash('success', 'Cliente excluido com sucesso!');
         } catch(\Exception $e) {
             Session::flash('error', '<b>Erro!</b><br>'.$e->getMessage());
         }
