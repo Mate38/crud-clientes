@@ -25,7 +25,7 @@ class ClientFactory extends Factory
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'tel' => $this->faker->numerify('###########'),
-            'photo' => $this->faker->imageUrl($width = 200, $height = 200)
+            // 'photo' => $this->faker->imageUrl($width = 200, $height = 200)
         ];
     }
 }

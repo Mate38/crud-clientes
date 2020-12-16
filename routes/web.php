@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', 'ClientController@list')->name('list');
+Route::get('/client/list', 'ClientController@list')->name('client.list');
+Route::post('/client/save', 'ClientController@save')->name('client.save');
+Route::post('/client/update/{client}', 'ClientController@save')->name('client.update');
